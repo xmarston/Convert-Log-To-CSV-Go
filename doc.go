@@ -1,8 +1,9 @@
 // This tiny script starts at version 0.0.1
-// Now you can run the script only if you had go in your computer
-// newer version won't need that and as you see we are in the main package
-// and not in a custom package
+// You can run the script only if you had go in your computer
+// You have to ways:
+//    1. Usage example go run convert_log_to_csv/*.go -file={fullinputfilepath} -sep={stringseparator} -outfile={fulloutputfilepath}
+//	  2. Making use of the Makefile. With simply typing make release inside the project directory
+//       you will get the binaries for the most used operating systems
 
-// Usage example go run convert_log_to_csv/*.go -file={fullinputfilepath} -sep={stringseparator} -outfile={fulloutputfilepath}
 
 package main
