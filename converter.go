@@ -20,7 +20,8 @@ func main() {
 
 	fileName := flag.String("file", "foo", "a string")
 	separator := flag.String("sep", ";", "a string")
-	outputFile := flag.String("outfile", ";", "a string")
+	outputFile := flag.String("outfile", "foo", "a string")
+	glue := flag.String("glue", ";", "a string")
 	flag.Parse()
 
 	fileHandle, err := os.Open(*fileName)
@@ -33,7 +34,7 @@ func main() {
 	for fileScanner.Scan() {
 		text := fileScanner.Text()
 		slice := strings.Split(text, *separator)
-		csvLine := strings.Join(slice[:], ";")
+		csvLine := strings.Join(slice[:], *glue)
 		err = writeLineToFile(*outputFile, csvLine+"\n")
 		if err != nil {
 			log.Error(err)
